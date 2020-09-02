@@ -1,5 +1,0 @@
-players = [
-    {
-        'name'
-    }
-]

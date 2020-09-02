@@ -4,7 +4,7 @@ These are practice problems for the first five sections of *Learn Python with Fa
 
 Read over the practice problems and try to complete them within your Google Colab environment. Solutions are found within the `solutions` folder.
 
-## Module 1: Our First Project and an Intro to Python.
+## Module 1 (Section 2 of the Course): Our First Project and an Intro to Python.
 
 #### Problem 1 (Easy)
 
@@ -12,7 +12,7 @@ Tyler Lockett had the following stat line for 2019.
 
 82 receptions, 69 targets, 1057 receiving yards, 8 receiving touchdowns
 
-Using simple, Python `print` Lockett's catch rate and fantasy points scored for 2019.
+Using Python, `print` Lockett's catch rate and fantasy points scored for 2019.
 
 #### Problem 2 (Medium)
 
@@ -65,9 +65,38 @@ Calculate the passer rating for a given player using the following formula:
 
     list_obj = [1, 2, 3, 56, 12, 23, 34, 12, 89, 90, 345, 67, 56, 34]
 
-#### Problem 10 
+#### Problem 10  (Hard)
 
-## Module 2: Functions
+Using a dictionary of `fantasy_weights`, find the fantasy points scored for Lamar Jackson with the following stats saved to the following dictionary:
+
+    lamar_jackson_stats = {
+      'passing_yds': 3127,
+      'passing_tds': 36,
+      'passing_int': 6,
+      'rushing_yds': 1206,
+      'rushing_tds': 7,
+      'fumbles': 8,
+      'receiving_yds': 0,
+      'receptions': 0,
+      'receiving_td': 0
+    }
+
+Your `fantasy_weights` dictionary should look like the following:
+
+    fantasy_weights = {
+    'passing_yds': 0.04,
+    'passing_tds': 4,
+    'passing_int': -2,
+    'rushing_yds': 0.10,
+    'rushing_tds': 6,
+    'fumbles': -2,
+    'receiving_yds': 0.10,
+    'receptions': 1, # adjust for half PPR and standard
+    'receiving_td': 6
+    }
+
+
+## Module 2: Functions, Loops, Conditionals (Section 3 of the Coruse)
 
 #### Problem 1 (Hard)
 
@@ -100,8 +129,77 @@ There are multiple ways to go about this problem. I'll cover two possible soluti
 
 Write a function that calculates a player's passer rating based off their completions, attempts, yards, interceptions, and touchdowns. These should all be arguments to your function. The formula for passer rating is above in module 1, problem 8 problem description.
 
+#### Problem 4 (Easy)
 
-## Module 3: Object Oriented Programming
+Write a function that takes in a player's rushing stats on the season and returns a formatted dictionary with `yards_per_carry` and `touchdowns_per_carry` 
+
+The input argument should be formatted like this:
+
+        {
+            'rushing_yards': 1000,
+            'rushing_touchdowns': 12,
+            'rushing_attempts': 240
+        }
+
+And the `return` value of the function should look like this:
+
+        {
+            'yards_per_carry': 5.0, # made up number for example purposes
+            'touchdowns_per_carry': 0.25
+        }
+
+#### Problem 5 (Medium)
+
+Using this list of dictionaries with information about the last 10 picks in a draft, find the last QB, RB, WR, TE chosen in the draft. Store the information about the last picked players in the draft in a dictionary with key:value pairs of position:pick
+
+        players = [
+            {
+                'pos': 'RB',
+                'pick': 90
+            },
+            {
+                'pos': 'RB',
+                'pick': 91
+            },
+            {
+                'pos': 'WR',
+                'pick': 92
+            },
+            {
+                'pos': 'TE',
+                'pick': 93
+            },
+            {
+                'pos': 'RB',
+                'pick': 94
+            },
+            {
+                'pos': 'RB',
+                'pick': 95
+            },
+            {
+                'pos': 'WR',
+                'pick': 96
+            },
+            {
+                'pos': 'RB',
+                'pick': 97
+            },
+            {
+                'pos': 'TE',
+                'pick': 98
+            },
+            {
+                'pos': 'RB',
+                'pick': 99
+            },
+            {
+                'pos': 'QB',
+                'pick': 100
+            },
+        ]
+
+## Module 3: Object Oriented Programming (Section 4 of the Course)
 
 #### Problem 1 (Medium)
 
@@ -115,15 +213,9 @@ And also create a method called `fantasy_points` that calculates Fantasy Points 
 
 As an added bonus, utilize the `@property` decorator for accessing `fantasy_points` as a class attribute rather than a method call.
 
-This part is optional, but find out more about `@property` here.
+This part is optional, but find out more about `@property` <a href="https://www.programiz.com/python-programming/property">here</a>.
 
-#### Problem 2 (Easy)
-
-Using the class above, instantiate new Player objects by iterating over a list of dictionaries with 3 NFL players stat lines for 2019.
-
-Save all of the instances to a list.
-
-## Module 4: Python Crash Course Recap
+## Module 4: Python Crash Course Recap (Section 5 of the Course)
 
 #### Problem 1 (Very Hard)
 
@@ -176,8 +268,57 @@ You should format each player object like the following:
 
 As you can see, this is a dictionary with keys as relevant fantasy categories and values as lists - each item in the list contains a separate stat line for that week. Your job is to collapse, or reduce, these lists in to one list that contains only their fantasy football points scored, and then run both those lists through the correlation function and find the correlation of the two players performances.
 
-#### Problem 4 (Hard)
+#### Problem 4 (Medium)
 
-Given this list of rushing attempts for the 2019 season, find the top 25th percentile, and the bottom 75th percentile using only vanilla Python code. 
-      
-    [287.0, 176.0,303.0,236.0,301.0,250.0,1.0,1.0,298.0,132.0,202.0,52.0,0.0,75.0,1.0,5.0,82.0,278.0,2.0,0.0,217.0,0.0,278.0,223.0,0.0,2.0,2.0,0.0,265.0,59.0,0.0,1.0,0.0,]
+Calculate and write a function to find the euclidean distance between two points.
+
+    (1.0, 450)
+    (5.0, 340)
+
+The euclidean distance is the straight-line distance between two points.
+
+It's defined by this equation:
+
+<img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/795b967db2917cdde7c2da2d1ee327eb673276c0">
+
+Euclidean distance is an important concept to know as we'll be covering it again in the clustering algorithms section.
+
+#### Problem 5 (Hard)
+
+Using the positional value for each position, calculate each player's value score. Each player's value score is their projected points over the value for their respective position.
+
+Your player data should be saved as the following:
+
+        {
+            'name': 'AJ Brown',
+            'position': 'WR',
+            'projected': 145
+        }
+
+Store 3 of these dictionaries for any players you like (as long as you use more than one position) in a list called `players`.
+
+Use the following positional values (a lower number means higher positional value - these are actually called replacement values which we'll cover in section six):
+
+        {
+            'WR': 50,
+            'RB': 32,
+            'TE': 45,
+            'QB': 110
+        }
+
+Use this dictionary to calculate a `value_score` for each player, and append the `value_score` to their dictionary.
+
+For example, AJ Brown's dictionary should look like the following:
+
+        {
+            'name': 'AJ Brown',
+            'position': 'WR',
+            'projected': 145,
+            'value_score': 95
+        }
+
+When grabbing elements from the dictionary, use the `get` method for dictionaries, rather than the traditional `dict[key]` method.
+
+Finally, sort the dictionaries on the value score (using `sorted`) and find the player with the highest value score.
+
+In the problem solution, I utilize the Python built-in function `enumerate`.

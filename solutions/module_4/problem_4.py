@@ -1,9 +1,15 @@
-def percentile(list_obj, percentile):
-    """
-    perecentile must be a float between 0 and 1.0
-    """
-    sorted_list_obj = sorted(list_obj, reverse=True)
+def euclidean_dist(a, b):
 
-    n = int(round(percentile * len(sorted_list_obj) + 0.5))
+    dist = sum(
+        [(ai - bi)**2 for ai, bi in zip(a, b)]
+        )**(1/2)
 
-    return sorted_list_obj[n - 1]
+    return dist
+
+dist = euclidean_dist((1.0, 450), (5.0, 340))
+print(dist)
+
+# check your work
+# from scipy.spatial.distance import euclidean
+# dist = euclidean((1.0, 450), (5.0, 340))
+# print(dist)

@@ -31,7 +31,6 @@ zipped_brady_fantasy_points = zip(
 
 brady_fantasy_points = [yds/25 + td*6 + inter*-2 for yds, td, inter in zipped_brady_fantasy_points]
 
-
 def compute_standard_deviation(data_set):
     mu = sum(data_set)/len(data_set)
     squared_deviations = [(x - mu)**2 for x in data_set]

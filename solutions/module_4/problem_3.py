@@ -68,5 +68,5 @@ def get_weekly_fantasy_performance(player):
 wr_ff_performance = get_weekly_fantasy_performance(wr)
 qb_ff_performance = get_weekly_fantasy_performance(qb)
 
-#.43 should be the answerr
+#.43 should be the answer
 print(correlation(wr_ff_performance, qb_ff_performance))

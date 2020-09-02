@@ -24,17 +24,17 @@ fantasy_weights = {
 
 # method number one.
 # this is probably the preferred way to solve this problem, and definitely the cleanest approach.
-# this approach will make more sense once you get to the Python crash course recap section.
+# this approach will make more sense once you get to the Python crash course recap section. (module 4)
 def compute_fantasy_points(stats_dict):
     fantasy_points = sum(
-        [stat*weight for stat, weight in zip(stats_dict.values(), fantasy_weights.values())]
+        [stats_dict[stat_category]*weight for stat_category, weight in fantasy_weights.items()]
     )
     return fantasy_points
 
 print('Lamar Jackson\'s Fantasy Points scored for 2019:', compute_fantasy_points(lamar_jackson_stats))
 
 # method number two.
-# this approach is easier to understand, but also more combursome and less abstracted.
+# this approach is easier to understand, but also more cumbersome and less abstracted.
 def compute_fantasy_points(stats_dict):
 
     return (
