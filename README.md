@@ -10,7 +10,7 @@ Read over the practice problems and try to complete them within your Google Cola
 
 Tyler Lockett had the following stat line for 2019.
 
-82 receptions, 69 targets, 1057 receiving yards, 8 receiving touchdowns
+69 receptions, 82 targets, 1057 receiving yards, 8 receiving touchdowns
 
 Using Python, `print` Lockett's catch rate and fantasy points scored for 2019.
 
